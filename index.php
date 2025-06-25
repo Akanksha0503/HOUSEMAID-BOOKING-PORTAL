@@ -7,11 +7,9 @@ include('includes/dbconnection.php');
 <!doctype html>
 <html class="no-js" lang="zxx">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>House Maid Booking Portal || Contact Us </title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+         <title>Maid Hiring Management System || Home Page </title>
+        
         <link rel="manifest" href="site.webmanifest">
 		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
 
@@ -31,73 +29,33 @@ include('includes/dbconnection.php');
    </head>
 
    <body>
-    <?php include_once('includes/header.php');?>
+   <?php include_once('includes/header.php');?>
     <main>
 
-        <!-- Hero Area Start-->
+        <!-- slider Area Start-->
         <div class="slider-area ">
-        <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="assets/img/hero/about.jpg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="hero-cap text-center">
-                            <h2>Contact us</h2>
+            <!-- Mobile Menu -->
+            <div class="slider-active">
+                <div class="single-slider slider-height d-flex align-items-center" data-background="assets/img/hero/h1_hero.jpg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-9 col-md-10">
+                                <div class="hero__caption">
+                                    <h1>Looking To Hire A Maid? </h1>
+                                     <p class="contact-title" style="text-left: center;color: red;"><a href="maid-hiring.php">Post Requirement Here ></a></p>
+                                </div>
+                            </div>
                         </div>
+                      
                     </div>
                 </div>
             </div>
         </div>
-        </div>
-        <!-- Hero Area End -->
-        <!-- Support Company Start-->
-        <div class="support-company-area fix section-padding2">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-xl-6 col-lg-12">
-                        <div class="right-caption">
-                            <!-- Section Tittle -->
-                            <div class="section-tittle section-tittle2">
-                                <?php
-$sql="SELECT * from tblpage where PageType='contactus'";
-$query = $dbh -> prepare($sql);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $row)
-{               ?>
-                            
-                            </div>
-							<div class="support-caption">
-								<label class="label_field"><b>Address Detail</b></label>
-                                <p class="pera-top"><?php  echo $row->PageDescription;?></p>
-                                <?php $cnt=$cnt+1; ?>
-                            </div>
-							
-							<div class="support-caption">
-								<label class="label_field"><b>Contact Number</b></label>
-                                <p class="pera-top"><?php  echo $row->MobileNumber;?></p>
-                                <?php $cnt=$cnt+1; ?>
-                            </div>
-							<div class="support-caption">
-								<label class="label_field"><b>Send us your query anytime!</b></label>
-                                <p class="pera-top"><?php  echo $row->Email;?></p>
-                                <?php $cnt=$cnt+1;}} ?>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        <!-- Support Company End-->
-
+        <!-- slider Area End-->
     </main>
     <?php include_once('includes/footer.php');?>
 
-	<!-- JS here -->
+  <!-- JS here -->
 	
 		<!-- All JS Custom Plugins Link Here here -->
         <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
@@ -112,6 +70,7 @@ foreach($results as $row)
         <script src="./assets/js/owl.carousel.min.js"></script>
         <script src="./assets/js/slick.min.js"></script>
         <script src="./assets/js/price_rangs.js"></script>
+        
 		<!-- One Page, Animated-HeadLin -->
         <script src="./assets/js/wow.min.js"></script>
 		<script src="./assets/js/animated.headline.js"></script>

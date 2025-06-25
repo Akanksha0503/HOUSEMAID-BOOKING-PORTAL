@@ -9,7 +9,7 @@ include('includes/dbconnection.php');
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>House Maid Booking Portal || Contact Us </title>
+        <title>House Maid Booking Portal || About Us </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
@@ -41,7 +41,7 @@ include('includes/dbconnection.php');
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap text-center">
-                            <h2>Contact us</h2>
+                            <h2>About us</h2>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@ include('includes/dbconnection.php');
                             <!-- Section Tittle -->
                             <div class="section-tittle section-tittle2">
                                 <?php
-$sql="SELECT * from tblpage where PageType='contactus'";
+$sql="SELECT * from tblpage where PageType='aboutus'";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -68,22 +68,11 @@ if($query->rowCount() > 0)
 {
 foreach($results as $row)
 {               ?>
-                            
+                               
+                                <h2><?php  echo htmlentities($row->PageTitle);?></h2>
                             </div>
-							<div class="support-caption">
-								<label class="label_field"><b>Address Detail</b></label>
+                            <div class="support-caption">
                                 <p class="pera-top"><?php  echo $row->PageDescription;?></p>
-                                <?php $cnt=$cnt+1; ?>
-                            </div>
-							
-							<div class="support-caption">
-								<label class="label_field"><b>Contact Number</b></label>
-                                <p class="pera-top"><?php  echo $row->MobileNumber;?></p>
-                                <?php $cnt=$cnt+1; ?>
-                            </div>
-							<div class="support-caption">
-								<label class="label_field"><b>Send us your query anytime!</b></label>
-                                <p class="pera-top"><?php  echo $row->Email;?></p>
                                 <?php $cnt=$cnt+1;}} ?>
                             </div>
                         </div>

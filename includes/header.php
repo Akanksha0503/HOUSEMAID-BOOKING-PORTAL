@@ -1,36 +1,53 @@
-<div class="topbar">
-                  <nav class="navbar navbar-expand-lg navbar-light">
-                     <div class="full">
-                        <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
-                        <div class="logo_section">
-                           <a href="dashboard.php"><h3 style="color: white;padding-top: 20px;padding-left: 10px;">Maid Hiring Management System</h3></a>
+ <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <strong>House Maid Booking Portal</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+       <div class="header-area header-transparrent">
+           <div class="headder-top header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 col-md-2">
+                            <!-- Logo -->
+                            <div class="logo">
+                                <a href="index.php"><img src="assets/img/logo/logo.png" alt="" width="150" height="150"></a>
+                            </div>  
                         </div>
-                        <div class="right_topbar">
-                           <div class="icon_info">
-                             
-                              <ul class="user_profile_dd">
-                                 <li><?php
-$aid=$_SESSION['mhmsaid'];
-$sql="SELECT AdminName,Email from  tbladmin where ID=:aid";
-$query = $dbh -> prepare($sql);
-$query->bindParam(':aid',$aid,PDO::PARAM_STR);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $row)
-{               ?>
-                                    <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="images/layout_img/user_img.jpg" alt="#" /><span class="name_user"><?php  echo $row->AdminName;?></span></a><?php $cnt=$cnt+1;}} ?>
-                                    <div class="dropdown-menu">
-                                       <a class="dropdown-item" href="profile.php">My Profile</a>
-                                       <a class="dropdown-item" href="change-password.php">Settings</a>
-                                       <a class="dropdown-item" href="logout.php"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
-                                    </div>
-                                 </li>
-                              </ul>
-                           </div>
+                        <div class="col-lg-9 col-md-9">
+                            <div class="menu-wrapper">
+                                <!-- Main-menu -->
+                                <div class="main-menu">
+                                    <nav class="d-none d-lg-block">
+                                        <ul id="navigation">
+                                            <li><a href="index.php">Home</a></li>
+                                            <li><a href="maid-hiring.php">Find a Maid </a></li>
+                                            <li><a href="about.php">About</a></li>
+                                           
+                                            <li><a href="contact.php">Contact</a></li>
+                                            <li><a href="admin/login.php">Admin Login</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>          
+                                <!-- Header-btn -->
+                               
+                            </div>
                         </div>
-                     </div>
-                  </nav>
-               </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+       </div>
+        <!-- Header End -->
+    </header>
